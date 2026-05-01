@@ -4,17 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Life RPG Terminal</title>
+<title>Neon Ascension - Life RPG Terminal</title>
+
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="icon.png">
+
 </head>
 
-<body>
+<body class="theme-dark">
+
+<!-- LOADING SCREEN (optional hook for future animation) -->
+<div id="loading">Loading NEON ASCENSION...</div>
 
 <div id="app">
 
   <!-- LEFT PANEL: STATS -->
   <div id="sidebar">
     <h2>⚔ Player</h2>
+
     <div id="stats">
       <p>Level: <span id="level">1</span></p>
       <p>XP: <span id="xp">0</span></p>
@@ -29,7 +36,7 @@
 
   <!-- MAIN TERMINAL -->
   <div id="terminal">
-    <div id="header">🔥 Life RPG Terminal</div>
+    <div id="header">🔥 NEON ASCENSION RPG</div>
 
     <div id="output"></div>
 
@@ -41,8 +48,11 @@
 
 </div>
 
+<!-- AUDIO -->
 <audio id="typeSound" src="type.mp3" preload="auto"></audio>
 
-<script src="script.js"></script>
+<!-- GAME SCRIPT -->
+<script defer src="script.js"></script>
+
 </body>
 </html>
