@@ -1,61 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: #0b0f14;
   color: #00ff88;
   font-family: monospace;
+  overflow: hidden;
 }
 
+/* Text selection (game feel) */
+::selection {
+  background: #00ff88;
+  color: #000;
+}
+
+/* MAIN APP LAYOUT */
 #app {
   display: flex;
   height: 100vh;
 }
 
-/* SIDEBAR */
+/* ===================== SIDEBAR (HUD) ===================== */
 #sidebar {
-  width: 250px;
-  background: #111822;
+  width: 260px;
+  background: linear-gradient(180deg, #111822, #0b0f14);
   padding: 15px;
   border-right: 2px solid #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.08);
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
 }
 
-#sidebar h2, #sidebar h3 {
+#sidebar h2,
+#sidebar h3 {
   color: #00ff88;
+  margin-top: 10px;
+}
+
+#stats p {
+  margin: 6px 0;
+  font-size: 14px;
 }
 
 #inventory {
   margin-top: 10px;
   font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
 }
 
-/* TERMINAL */
+/* ===================== TERMINAL ===================== */
 #terminal {
   flex: 1;
   display: flex;
   flex-direction: column;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.15);
 }
 
+/* HEADER BAR */
 #header {
-  padding: 10px;
-  background: #111822;
+  padding: 12px;
+  background: linear-gradient(90deg, #111822, #0b0f14);
   border-bottom: 2px solid #00ff88;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* OUTPUT LOG AREA */
 #output {
   flex: 1;
-  padding: 10px;
+  padding: 12px;
   overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
+/* INPUT AREA */
 #input-line {
   display: flex;
   padding: 10px;
   border-top: 2px solid #00ff88;
+  background: #0b0f14;
 }
 
 .prompt {
-  margin-right: 5px;
+  margin-right: 8px;
+  color: #00ff88;
 }
 
+/* INPUT FIELD */
 #input {
   flex: 1;
   background: transparent;
@@ -63,4 +97,37 @@ body {
   color: #00ff88;
   outline: none;
   font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* ===================== SCROLLBAR (OPTIONAL POLISH) ===================== */
+#output::-webkit-scrollbar {
+  width: 6px;
+}
+
+#output::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+/* ===================== BACKGROUND GLOW EFFECT ===================== */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 136, 0.06),
+    transparent 60%
+  );
+  animation: pulse 6s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.2; }
 }
