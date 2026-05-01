@@ -56,5 +56,5 @@ function process(cmd) {
 }
 
 print("Life RPG Terminal");
-print("Built by Sam");
+print("Built by Sadab");
 print("Type 'add learn JS'");
