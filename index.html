@@ -2,20 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Life RPG Terminal</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div id="terminal">
-  <div id="output"></div>
-  <div id="input-line">
-    <span>> </span>
-    <input id="input" autofocus autocomplete="off" />
+<div id="app">
+
+  <!-- LEFT PANEL: STATS -->
+  <div id="sidebar">
+    <h2>⚔ Player</h2>
+    <div id="stats">
+      <p>Level: <span id="level">1</span></p>
+      <p>XP: <span id="xp">0</span></p>
+      <p>HP: <span id="hp">100</span></p>
+      <p>Gold: <span id="gold">50</span></p>
+      <p>Energy: <span id="energy">100</span></p>
+    </div>
+
+    <h3>🎒 Inventory</h3>
+    <div id="inventory"></div>
   </div>
+
+  <!-- MAIN TERMINAL -->
+  <div id="terminal">
+    <div id="header">🔥 Life RPG Terminal</div>
+
+    <div id="output"></div>
+
+    <div id="input-line">
+      <span class="prompt">></span>
+      <input id="input" autocomplete="off" autofocus />
+    </div>
+  </div>
+
 </div>
 
-<audio id="typeSound" src="type.mp3"></audio>
+<audio id="typeSound" src="type.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
 </body>
